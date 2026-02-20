@@ -12,11 +12,17 @@ export const useNotifications = () => {
         return permission === 'granted';
     }, []);
 
+    const playSound = useCallback(() => {
+        const audio = new Audio('https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3');
+        audio.play().catch(err => console.log('Audio playback failed:', err));
+    }, []);
+
     const showNotification = useCallback((title, options) => {
         if (Notification.permission === 'granted') {
             new Notification(title, options);
+            playSound();
         }
-    }, []);
+    }, [playSound]);
 
     useEffect(() => {
         const checkTasks = () => {

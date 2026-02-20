@@ -133,6 +133,23 @@ const Profile = () => {
                                         <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary-600"></div>
                                     </label>
                                 </div>
+                                <div className="flex items-center justify-between p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-600 flex items-center justify-center">
+                                            <Bell size={20} />
+                                        </div>
+                                        <div>
+                                            <p className="font-bold text-slate-800 dark:text-slate-100 text-sm">Notification Sound</p>
+                                            <p className="text-xs text-slate-500">Play a tone when a task is due</p>
+                                        </div>
+                                    </div>
+                                    <button
+                                        onClick={() => new Audio('https://assets.mixkit.co/active_storage/sfx/2869/2869-preview.mp3').play()}
+                                        className="text-primary-600 text-xs font-bold hover:underline"
+                                    >
+                                        Test Sound
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

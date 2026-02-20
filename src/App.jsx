@@ -4,6 +4,7 @@ import { AuthProvider } from './context/AuthContext';
 import { TaskProvider } from './context/TaskContext';
 import ProtectedRoute from './components/Layout/ProtectedRoute';
 import MainLayout from './components/Layout/MainLayout';
+import NotificationManager from './components/NotificationManager';
 
 // Pages (to be implemented)
 import Login from './pages/Auth/Login';
@@ -34,6 +35,7 @@ function App() {
   return (
     <AuthProvider>
       <TaskProvider>
+        <NotificationManager />
         <Router>
           <Routes>
             <Route path="/login" element={<Login />} />
